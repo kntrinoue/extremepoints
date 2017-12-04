@@ -64,7 +64,7 @@ getExtremePoints <- function(y, threshold=0.01){
         k2 <- j
       }
     }
-    else if(flag==2){
+    if(flag==2){
       if(y[k2] < y[j]){#//If y[j] is more than y[k2], y[j] is regarded as temporary top.(update)
         k2 <- j
       }
@@ -76,13 +76,13 @@ getExtremePoints <- function(y, threshold=0.01){
         bottomOrTop[numOfExtremePoints] <- TOP
       }
     }
-    else if(flag==3){
+    if(flag==3){
       if(y[j] < y[j+1]){#//point from decrease to increase is regarded as temporary bottom 
         flag <- 4
         k1 <- j
       }
     }
-    else if(flag==4){
+    if(flag==4){
       if(y[k1] > y[j]){#//If y[j] is less than y[k1], y[j] is regarded as temporary bottom.(update)
         k1 <- j
       }
